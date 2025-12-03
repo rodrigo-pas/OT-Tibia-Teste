@@ -1,0 +1,41 @@
+const fs = require('fs');
+const xml2js = require('xml2js');
+
+// Read the XML file
+fs.readFile('npc.xml', 'utf-8', (err, data) => {
+    if (err) {
+        console.error('Error reading XML file:', err);
+        return;
+    }
+
+    // Parse XML to JSON
+    xml2js.parseString(data, (err, result) => {
+        if (err) {
+            console.error('Error parsing XML:', err);
+            return;
+        }
+
+        // Get the parameters element
+        const parameters = result.npc.parameters[0];
+
+        // Filter function to remove items with itemid higher than 5090
+        const filterItems = (param) => {
+            if (!param || !param.parameter) return;
+            param.parameter = param.parameter.filter(p => {
+                const itemId = parseInt(p.$.value.split(',')[1]);
+                return itemId <= 5090;
+            });
+        };
+
+        // Filter buyable and sellable items
+        filterItems(parameters.find(p => p.$.key === 'shop_buyable'));
+        filterItems(parameters.find(p => p.$.key === 'shop_sellable'));
+
+        // Convert JSON back to XML
+        const builder = new xml2js.Builder();
+        const xml = builder.buildObject(result);
+
+        // Print the updated XML
+        console.log(xml);
+    });
+});

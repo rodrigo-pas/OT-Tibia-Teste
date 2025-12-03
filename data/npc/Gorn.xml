@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Gorn" script="Al Dee.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="129" head="97" body="77" legs="87" feet="115" addons="0" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
+Goldenruby backpack,5818,240;Crown Backpack,5813,280;Demon Backpack,5859,400;
+fishing rod,2580,150;rope,2120,50;scroll,1949,5;scythe,2550,12;machete, 2420, 100;shovel,2554,10;torch,2050,2;worm,3976,1;identification scroll,7953,100;backpack,1988,10;
+
+backpack,1998,10; 
+backpack,2000,10; 
+backpack,1999,10; 
+backpack,1997,10; 
+backpack,2001,10; 
+backpack,2002,10; 
+backpack,1987,10;
+Green bag,1992,5;Golden Bag,1996,5;Grey Bag,1995,5;Blue Bag,1994,5;Purple Bag,1993,5;Red Bag,1991,5;" />
+		<parameter key="shop_sellable" value="fishing rod,2580,30;rope,2120,8;shovel,2554,2" />
+	</parameters>
+</npc>

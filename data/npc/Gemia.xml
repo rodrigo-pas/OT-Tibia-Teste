@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Gemia" script="default.lua" walkinterval="2000" floorchange="0" walkradius="3">
+	<health now="100" max="100" />
+	<look type="150" head="78" body="68" legs="47" feet="84" addons="2" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="red gem, 2156, 20000;blue gem, 2158, 20000;yellow gem, 2154,20000;green gem, 2155, 20000;"/>
+		<parameter key="shop_sellable" value="" />
+	</parameters>
+</npc>
